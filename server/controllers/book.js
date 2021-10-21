@@ -1,3 +1,8 @@
+/* book.js - db, update, delete routes.
+Oscar Quispe
+301182317
+10/19/2021*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -16,40 +21,11 @@ module.exports.displayBookList = (req, res, next) => {
             //console.log(BookList);
 
             res.render('book/list', 
-            {title: 'Books', 
+            {title: 'Business Contact List', 
             BookList: bookList, 
             displayName: req.user ? req.user.displayName : ''});                  
         }
     });
-}
-
-module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book',
-    displayName: req.user ? req.user.displayName : ''})          
-}
-
-module.exports.processAddPage = (req, res, next) => {
-    let newBook = Book({
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
-    });
-
-    Book.create(newBook, (err, Book) =>{
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            // refresh the book list
-            res.redirect('/book-list');
-        }
-    });
-
 }
 
 module.exports.displayEditPage = (req, res, next) => {
@@ -64,7 +40,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit,
+            res.render('book/edit', {title: 'Update Contact', book: bookToEdit,
             displayName: req.user ? req.user.displayName : ''})
         }
     });
@@ -75,11 +51,9 @@ module.exports.processEditPage = (req, res, next) => {
 
     let updatedBook = Book({
         "_id": id,
-        "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "cname": req.body.cname,
+        "cnumber": req.body.cnumber,
+        "email": req.body.email,
     });
 
     Book.updateOne({_id: id}, updatedBook, (err) => {

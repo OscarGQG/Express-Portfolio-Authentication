@@ -1,3 +1,8 @@
+/* book.js -  update,delete routes.
+Oscar Quispe
+301182317
+10/19/2021*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -19,12 +24,6 @@ function requireAuth(req, res, next)
 
 /* GET Route for the Book List page - READ Operation */
 router.get('/', bookController.displayBookList);
-
-/* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', requireAuth, bookController.displayAddPage);
-
-/* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', requireAuth, bookController.processAddPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
 router.get('/edit/:id', requireAuth, bookController.displayEditPage);

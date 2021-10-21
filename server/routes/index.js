@@ -1,3 +1,8 @@
+/* index.js - routes site.
+Oscar Quispe
+301182317
+10/19/2021*/
+
 let express = require('express');
 let router = express.Router();
 
@@ -13,7 +18,7 @@ router.get('/home', indexController.displayHomePage);
 router.get('/about', indexController.displayAboutPage);
 
 /* GET Products page. */
-router.get('/products', indexController.displayProductsPage);
+router.get('/projects', indexController.displayProductsPage);
 
 /* GET Services page. */
 router.get('/services', indexController.displayServicesPage);
@@ -26,12 +31,6 @@ router.get('/login', indexController.displayLoginPage);
 
 /* POST Route for processing the Login page */
 router.post('/login', indexController.processLoginPage);
-
-/* GET Route for displaying the Register page */
-router.get('/register', indexController.displayRegisterPage);
-
-/* POST Route for processing the Register page */
-router.post('/register', indexController.processRegisterPage);
 
 /* GET to perform UserLogout */
 router.get('/logout', indexController.performLogout);
