@@ -5,5 +5,6 @@ Oscar Quispe
 
 module.exports =
 {
-    "URI" : "mongodb://localhost/book_store"
+    //"URI" : "mongodb://localhost/book_store"    
+    "URI" : "mongodb+srv://oscar:ub1hsGeLjRHELpeP@databaseserver.9gdom.mongodb.net/book_store?retryWrites=true&w=majority"
 }
