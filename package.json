@@ -1,9 +1,13 @@
 {
-  "name": "week3b",
-  "version": "0.0.0",
+  "name": "assignment2",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^16.9.1",
+    "npm": "^7.21.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -31,5 +35,17 @@
     "@types/passport": "^1.0.7",
     "@types/passport-local": "^1.0.34",
     "@types/passport-local-mongoose": "^6.1.0"
-  }
+  },
+  "description": "Express Portfolio Authentication",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarGQG/Express-Portfolio-Authentication.git"
+  },
+  "author": "Oscar G. Quispe G.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OscarGQG/Express-Portfolio-Authentication/issues"
+  },
+  "homepage": "https://github.com/OscarGQG/Express-Portfolio-Authentication#readme"
 }
