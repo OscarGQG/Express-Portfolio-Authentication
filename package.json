@@ -37,7 +37,7 @@
     "@types/passport-local-mongoose": "^6.1.0"
   },
   "description": "Express Portfolio Authentication",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OscarGQG/Express-Portfolio-Authentication.git"
